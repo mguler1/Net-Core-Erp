@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Net_Core_Erp.Entities.Concrete
 {
-   public class Mesajlar : ITable
+   public class Mesajlar : ITablo
     {
 
         public int MesajId { get; set; }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Net_Core_Erp.Entities.Concrete
 {
-    public class SatisHareket : ITable
+    public class SatisHareket : ITablo
     {
        
         public int SatisID { get; set; }

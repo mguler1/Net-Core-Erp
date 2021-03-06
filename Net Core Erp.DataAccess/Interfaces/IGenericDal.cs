@@ -1,11 +1,17 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Net_Core_Erp.Entities.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Net_Core_Erp.DataAccess.Interfaces
 {
-  public  interface IGenericDal
+  public  interface IGenericDal<Tablo> where Tablo: class,ITablo,new()
     {
-
+        void Ekle(Tablo tablo);
+        void Sil(Tablo tablo);
+        void Güncelle(Tablo tablo);
+        Tablo Detay(int id);
+        List<Tablo> Listele();
     }
 }

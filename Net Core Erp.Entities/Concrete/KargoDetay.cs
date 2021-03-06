@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Net_Core_Erp.Entities.Concrete
 {
-   public class KargoDetay : ITable
+   public class KargoDetay : ITablo
     {
       
         public int KargoDetayID { get; set; }

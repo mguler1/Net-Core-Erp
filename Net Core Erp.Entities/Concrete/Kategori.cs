@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Net_Core_Erp.Entities.Concrete
 {
-   public class Kategori : ITable
+   public class Kategori : ITablo
     {
 
         public int KategorID { get; set; }

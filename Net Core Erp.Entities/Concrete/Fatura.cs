@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Net_Core_Erp.Entities.Concrete
 {
-   public class Fatura : ITable
+   public class Fatura : ITablo
     {
        
         public int FaturaID { get; set; }

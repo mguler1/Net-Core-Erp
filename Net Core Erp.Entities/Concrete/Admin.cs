@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Net_Core_Erp.Entities.Concrete
 {
-   public class Admin:ITable
+   public class Admin:ITablo
     {
        
         public int AdminID { get; set; }

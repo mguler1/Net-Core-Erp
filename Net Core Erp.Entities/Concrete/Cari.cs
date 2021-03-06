@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Net_Core_Erp.Entities.Concrete
 {
-   public class Cari:ITable
+   public class Cari:ITablo
     {
        
         public int CariID { get; set; }

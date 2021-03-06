@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Net_Core_Erp.Entities.Concrete
 {
-  public  class Gider : ITable
+  public  class Gider : ITablo
     {
         public int GiderID { get; set; }
 
