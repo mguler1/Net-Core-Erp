@@ -8,7 +8,7 @@ namespace Net_Core_Erp.Entities.Concrete
 {
     public class SatisHareket : ITable
     {
-       [Key]
+       
         public int SatisID { get; set; }
         //ürün
         public virtual Urun Urun { get; set; }
@@ -17,8 +17,9 @@ namespace Net_Core_Erp.Entities.Concrete
         public virtual Cari Cari { get; set; }
         public int Cariid { get; set; }
         //personel
-        public virtual Personel Personel { get; set; }
         public int Personelid { get; set; }
+        public virtual Personel Personel { get; set; }
+       
 
         public DateTime Tarih { get; set; }
         public int Adet { get; set; }

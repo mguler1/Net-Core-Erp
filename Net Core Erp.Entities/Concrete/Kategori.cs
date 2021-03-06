@@ -8,7 +8,7 @@ namespace Net_Core_Erp.Entities.Concrete
 {
    public class Kategori : ITable
     {
-       [Key]
+
         public int KategorID { get; set; }
         public string KategoriAd { get; set; }
         public ICollection<Urun> Uruns { get; set; }//her kategoride birden fazla ürün olabilir

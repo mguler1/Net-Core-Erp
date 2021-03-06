@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Net_Core_Erp.DataAccess.Migrations
 {
-    public partial class initializer : Migration
+    public partial class ilk : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,9 +13,9 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     AdminID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    KullaniciAd = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Sifre = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Yetki = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    KullaniciAd = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    Sifre = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    Yetki = table.Column<string>(type: "nvarchar(1)", maxLength: 1, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -28,11 +28,11 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     CariID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CariAd = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CariAd = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     CariSoyad = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CariSehir = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CariMail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CariSifre = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CariSehir = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: true),
+                    CariMail = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    CariSifre = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Durum = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -46,7 +46,7 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     DepartmanID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DepartmanAd = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DepartmanAd = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     Durum = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -60,8 +60,8 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     DetayID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UrunAd = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UrunBilgi = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UrunAd = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
+                    UrunBilgi = table.Column<string>(type: "nvarchar(2500)", maxLength: 2500, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -74,13 +74,13 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     FaturaID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FaturaSeriNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FaturaSıraNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Tarih = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Saat = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    VergiDairesi = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TeslimEden = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TeslimAlan = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FaturaSeriNo = table.Column<string>(type: "Char(1)", maxLength: 1, nullable: true),
+                    FaturaSıraNo = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: true),
+                    Tarih = table.Column<DateTime>(type: "DateTime", nullable: false),
+                    Saat = table.Column<string>(type: "Char(5)", maxLength: 5, nullable: true),
+                    VergiDairesi = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: true),
+                    TeslimEden = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
+                    TeslimAlan = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     Toplam = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
@@ -94,7 +94,7 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     GiderID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Acıklama = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Acıklama = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     Tarih = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Tutar = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
@@ -109,9 +109,9 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     KargoDetayID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TakipKodu = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Personel = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Aciklama = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
+                    TakipKodu = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    Personel = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
                     Alici = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Tarih = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -126,8 +126,8 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     KargoTakipID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TakipKodu = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TakipKodu = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    Aciklama = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     TarihZaman = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -141,7 +141,7 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     KategorID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    KategoriAd = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    KategoriAd = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -154,10 +154,10 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     MesajId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Gonderici = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Alici = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Konu = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Icerik = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gonderici = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Alici = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Konu = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Icerik = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: true),
                     Tarih = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -171,9 +171,9 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     YapilacakID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Baslik = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Baslik = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Durum = table.Column<bool>(type: "bit", nullable: false),
-                    Süre = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Süre = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -186,9 +186,9 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     PersonelID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PersonelAd = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PersonelSoyad = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PersonelGorsel = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PersonelAd = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
+                    PersonelSoyad = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
+                    PersonelGorsel = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
                     departmanid = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -208,7 +208,7 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     FaturaKalemID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Acıklama = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Acıklama = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Miktar = table.Column<int>(type: "int", nullable: false),
                     BirimFiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Tutar = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -231,24 +231,24 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 {
                     UrunID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UrunAd = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Marka = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UrunAd = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
+                    Marka = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     Stok = table.Column<short>(type: "smallint", nullable: false),
                     AlisFiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     SatisFiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Durum = table.Column<bool>(type: "bit", nullable: false),
-                    UrunGorsel = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    KategorID = table.Column<int>(type: "int", nullable: true)
+                    UrunGorsel = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Kategoriid = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Uruns", x => x.UrunID);
                     table.ForeignKey(
-                        name: "FK_Uruns_Kategoris_KategorID",
-                        column: x => x.KategorID,
+                        name: "FK_Uruns_Kategoris_Kategoriid",
+                        column: x => x.Kategoriid,
                         principalTable: "Kategoris",
                         principalColumn: "KategorID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -314,9 +314,9 @@ namespace Net_Core_Erp.DataAccess.Migrations
                 column: "Urunid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Uruns_KategorID",
+                name: "IX_Uruns_Kategoriid",
                 table: "Uruns",
-                column: "KategorID");
+                column: "Kategoriid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

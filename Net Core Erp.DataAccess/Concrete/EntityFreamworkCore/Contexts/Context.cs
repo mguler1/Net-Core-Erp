@@ -34,6 +34,7 @@ namespace Net_Core_Erp.DataAccess.Concrete.EntityFreamworkCore.Contexts
             modelBuilder.ApplyConfiguration(new MesajlarMap());
             modelBuilder.ApplyConfiguration(new PersonelMap());
             modelBuilder.ApplyConfiguration(new SatisHareketMap());
+            modelBuilder.ApplyConfiguration(new YapilacakMap());
          
 
 

@@ -16,7 +16,7 @@ namespace Net_Core_Erp.DataAccess.Concrete.EntityFreamworkCore.Mapping
             builder.Property(I => I.PersonelAd).HasMaxLength(30);
             builder.Property(I => I.PersonelSoyad).HasMaxLength(30);
             builder.Property(I => I.PersonelGorsel).HasMaxLength(250);
-            builder.HasMany(I => I.SatisHarekets).WithOne(I => I.Personel).HasForeignKey(I => I.SatisID);
+            builder.HasMany(I => I.SatisHarekets).WithOne(I => I.Personel).HasForeignKey(I => I.Personelid);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Net_Core_Erp.Entities.Concrete
 {
    public class Mesajlar : ITable
     {
-       [Key]
+
         public int MesajId { get; set; }
 
        
