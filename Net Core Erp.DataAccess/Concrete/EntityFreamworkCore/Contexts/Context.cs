@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Net_Core_Erp.DataAccess.Concrete.EntityFreamworkCore.Mapping;
 using Net_Core_Erp.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,21 @@ namespace Net_Core_Erp.DataAccess.Concrete.EntityFreamworkCore.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            //modelBuilder.ApplyConfiguration(new GorevMap());
-            //modelBuilder.ApplyConfiguration(new AciliyetMap());
-            //modelBuilder.ApplyConfiguration(new RaporMap());
-            //modelBuilder.ApplyConfiguration(new AppUserMap());
+            modelBuilder.ApplyConfiguration(new AdminMap());
+            modelBuilder.ApplyConfiguration(new CariMap());
+            modelBuilder.ApplyConfiguration(new DepartmanMap());
+            modelBuilder.ApplyConfiguration(new DetayMap());
+            modelBuilder.ApplyConfiguration(new FaturaMap());
+            modelBuilder.ApplyConfiguration(new FaturaKalemMap());
+            modelBuilder.ApplyConfiguration(new GiderMap());
+            modelBuilder.ApplyConfiguration(new KargoDetayMap());
+            modelBuilder.ApplyConfiguration(new KargoTakipMap());
+            modelBuilder.ApplyConfiguration(new KategoriMap());
+            modelBuilder.ApplyConfiguration(new UrunMap());
+            modelBuilder.ApplyConfiguration(new MesajlarMap());
+            modelBuilder.ApplyConfiguration(new PersonelMap());
+            modelBuilder.ApplyConfiguration(new SatisHareketMap());
+         
 
 
             base.OnModelCreating(modelBuilder);

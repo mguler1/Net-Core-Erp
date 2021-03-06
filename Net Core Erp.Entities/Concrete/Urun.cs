@@ -24,7 +24,7 @@ namespace Net_Core_Erp.Entities.Concrete
         public bool Durum { get; set; }
 
         public string UrunGorsel { get; set; }
-        // public int Kategoriid { get; set; }
+         public int Kategoriid { get; set; }
         public virtual Kategori Kategori { get; set; } //her ürünün bir kategorisi olabilir
         public ICollection<SatisHareket> SatisHarekets { get; set; }
     }
