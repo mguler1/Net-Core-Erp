@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Net_Core_Erp.DataAccess.Interfaces
 {
-    public interface IAdminDal :IGenericDal<Fatura>
+    public interface IAdminDal :IGenericDal<Admin>
     {
 
     }
