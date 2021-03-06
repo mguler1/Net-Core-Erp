@@ -1,0 +1,49 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Net_Core_Erp.Entities.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Net_Core_Erp.DataAccess.Concrete.EntityFreamworkCore.Contexts
+{
+   public class Context:DbContext
+    {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("server=MEHDI;database=KmErp;integrated security=true;");
+
+
+            base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            //modelBuilder.ApplyConfiguration(new GorevMap());
+            //modelBuilder.ApplyConfiguration(new AciliyetMap());
+            //modelBuilder.ApplyConfiguration(new RaporMap());
+            //modelBuilder.ApplyConfiguration(new AppUserMap());
+
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<Cari> Caris { get; set; }
+        public DbSet<Departman> Departmans { get; set; }
+        public DbSet<Fatura> Faturas { get; set; }
+        public DbSet<FaturaKalem> FaturaKalems { get; set; }
+        public DbSet<Gider> Giders { get; set; }
+        public DbSet<Kategori> Kategoris { get; set; }
+        public DbSet<Personel> Personels { get; set; }
+        public DbSet<SatisHareket> SatisHarekets { get; set; }
+        public DbSet<Urun> Uruns { get; set; }
+        public DbSet<Detay> Detays { get; set; }
+        public DbSet<Yapilacak> Yapilacaks { get; set; }
+        public DbSet<KargoDetay> KargoDetays { get; set; }
+        public DbSet<KargoTakip> KargoTakips { get; set; }
+        public DbSet<Mesajlar> Mesajlars { get; set; }
+
+    }
+}
+

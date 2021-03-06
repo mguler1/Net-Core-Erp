@@ -1,13 +1,14 @@
 ﻿using Net_Core_Erp.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Net_Core_Erp.Entities.Concrete
 {
     public class SatisHareket : ITable
     {
-       
+       [Key]
         public int SatisID { get; set; }
         //ürün
         public virtual Urun Urun { get; set; }
