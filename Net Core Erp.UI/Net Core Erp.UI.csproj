@@ -9,4 +9,8 @@
     <ProjectReference Include="..\Net Core Erp.Business\Net Core Erp.Business.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>
